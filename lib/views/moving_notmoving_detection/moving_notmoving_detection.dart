@@ -1,0 +1,10 @@
+export 'general_info_screen.dart';
+export 'user_data_form_screen.dart';
+export 'mcq_screen.dart';
+export 'game_start_screen.dart';
+export 'object_move_screen.dart';
+export 'first_activity_complete_screen.dart';
+export 'second_activiy_start_screen.dart';
+export 'second_activity_complete_screen.dart';
+export 'object_not_move_screen.dart';
+export 'score_screen.dart';
