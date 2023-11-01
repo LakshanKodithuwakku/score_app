@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../constants/constants.dart';
 import '../../functions/functions.dart';
 import '../../provider/provider.dart';
@@ -15,7 +14,6 @@ class FinalResultScreen extends StatefulWidget {
 }
 
 class _FinalResultScreenState extends State<FinalResultScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +33,9 @@ class _FinalResultScreenState extends State<FinalResultScreen> {
                     height: 80,
                   ),
                 ),
-                const SizedBox(height: 50,),
+                const SizedBox(
+                  height: 50,
+                ),
                 Text(
                   "Thank you!",
                   style: TextStyle(
@@ -60,47 +60,48 @@ class _FinalResultScreenState extends State<FinalResultScreen> {
                 SizedBox(
                   height: 20,
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "High probability of having CVi..",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: textBlue,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
                 Consumer<ResponseProvider>(
-                  builder: ((context, responseProviderModel, child) =>
-                      CircleTextWidget(
-                        text: responseProviderModel.diagnose,
+                  builder: ((context, responseProviderModel, child) => Text(
+                            textAlign: TextAlign.center,
+                            responseProviderModel.diagnose == "no"
+                                ? "Low probability of having CVI"
+                                : responseProviderModel.diagnose == "yes"
+                                    ? "High probability of having CVI"
+                                    : responseProviderModel.diagnose,
+                            style: const TextStyle(
+                              fontSize: 30,
+                              color: textBlue,
+                            ),
+                          )
+                      /*CircleTextWidget(
+                        text: responseProviderModel.diagnose == "no"
+                            ? "Low probability of having CVi"
+                            : responseProviderModel.diagnose == "yes"
+                                ? "High probability of having CVi"
+                                : responseProviderModel.diagnose,
                         circleColor: backgroundBlue,
                         textColor: textWhite,
                         circleRadius: 50.0,
-                      )),
+                      )*/
+                      ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
-                      CustomButton(
-                        onPressed: () {
-                          stopSpeaking();
-                          /*Navigator.of(context).pushReplacement(
+                CustomButton(
+                  onPressed: () {
+                    stopSpeaking();
+                    /*Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                               builder: (_) => MCQScreen(),//scoreShow(),
                             ),
                           );*/
-                        },
-                        titel: 'More information',
-                        textColor: textWhite,
-                        fontSize: 20,
-                        buttonColor: backgroundBlue,
-                      ),
-
+                  },
+                  titel: 'More information',
+                  textColor: textWhite,
+                  fontSize: 20,
+                  buttonColor: backgroundBlue,
+                ),
               ],
             ),
           ),
@@ -109,4 +110,3 @@ class _FinalResultScreenState extends State<FinalResultScreen> {
     );
   }
 }
-

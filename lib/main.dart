@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: StartScreenMoveOBJ(), //StartScreen(),
+        home: StartScreen(),
       ),
     );
   }

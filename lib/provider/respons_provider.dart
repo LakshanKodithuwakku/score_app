@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-
 import '../views/views.dart';
 
 
@@ -51,7 +49,7 @@ class ResponseProvider extends ChangeNotifier{
         .doc(doc_id);
     /// Update specification fields
     docUser.update({
-      'High probability of having CVi':diagnose
+      'result':diagnose == "no" ? "Low probability of having CVI" : diagnose == "yes" ? "High probability of having CVI" : diagnose
     });
   }
 }
