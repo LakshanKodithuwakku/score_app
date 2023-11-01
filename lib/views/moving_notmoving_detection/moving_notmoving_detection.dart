@@ -10,3 +10,4 @@ export 'object_not_move_screen.dart';
 export 'score_screen.dart';
 export 'quiz_score_screen.dart';
 export 'final_result_screen.dart';
+export 'info.dart';

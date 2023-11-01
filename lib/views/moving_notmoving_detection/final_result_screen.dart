@@ -91,11 +91,11 @@ class _FinalResultScreenState extends State<FinalResultScreen> {
                 CustomButton(
                   onPressed: () {
                     stopSpeaking();
-                    /*Navigator.of(context).pushReplacement(
+                    Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                              builder: (_) => MCQScreen(),//scoreShow(),
+                              builder: (_) => const CVIGuidanceScreen(),//scoreShow(),
                             ),
-                          );*/
+                          );
                   },
                   titel: 'More information',
                   textColor: textWhite,
