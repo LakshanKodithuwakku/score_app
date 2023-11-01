@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import '../../constants/constants.dart';
 import '../../functions/functions.dart';
+import '../../services/services.dart';
 import '../../widgets/widgets.dart';
 import '../views.dart';
 
-class ActivityOneComplete extends StatefulWidget {
-  const ActivityOneComplete({Key? key}) : super(key: key);
+class QuizScoreScreen extends StatefulWidget {
+  const QuizScoreScreen({Key? key}) : super(key: key);
 
   @override
-  State<ActivityOneComplete> createState() => _ActivityOneCompleteState();
+  State<QuizScoreScreen> createState() => _QuizScoreScreenState();
 }
 
-class _ActivityOneCompleteState extends State<ActivityOneComplete> {
+class _QuizScoreScreenState extends State<QuizScoreScreen> {
+  final UserService _userService = UserService();
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    speak("Time's up! Well done! You've completed the 'Ride' activity. Great job spotting and clicking the moving gray car!");
+    _userService.createUser(
+    );
   }
   @override
   Widget build(BuildContext context) {
@@ -37,24 +41,20 @@ class _ActivityOneCompleteState extends State<ActivityOneComplete> {
                     height: 80,
                   ),
                 ),
-                const Text("Moving Car", style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: textWhite,
-                ),),
+               const SizedBox(height: 20,),
                 Image.asset(
                   "assets/images/car_brown.png",
                   width: 250,
                   height: 250,
                 ),
-                const Text("Activity 1", style: TextStyle(
+                const Text("Quiz", style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: textWhite,
                 ),),
                 SizedBox(height: 20,),
                 CircleTextWidget(
-                  text: (10 - gl_mark_1.round()).toString(),
+                  text: quiz_mark.toString(),
                   circleColor: backgroundYellow,
                   textColor: textBlue,
                   circleRadius: 40.0,
@@ -70,7 +70,7 @@ class _ActivityOneCompleteState extends State<ActivityOneComplete> {
                   stopSpeaking();
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (_) => const SecondActStartScreen(),
+                      builder: (_) => const FinalResultScreen(),
                     ),
                   );
                 }, titel: 'Next', textColor: textBlue,),

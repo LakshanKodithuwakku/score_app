@@ -7,27 +7,19 @@ import '../../provider/provider.dart';
 import '../../widgets/widgets.dart';
 import '../views.dart';
 
-class ActivityTwoComplete extends StatefulWidget {
-  const ActivityTwoComplete({Key? key}) : super(key: key);
+class FinalResultScreen extends StatefulWidget {
+  const FinalResultScreen({Key? key}) : super(key: key);
 
   @override
-  State<ActivityTwoComplete> createState() => _ActivityTwoCompleteState();
+  State<FinalResultScreen> createState() => _FinalResultScreenState();
 }
 
-class _ActivityTwoCompleteState extends State<ActivityTwoComplete> {
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    speak(
-        "Time's up! Well done! You've completed the activity two. Great job finding the static gray car!");
-  }
+class _FinalResultScreenState extends State<FinalResultScreen> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundYellow,
+      backgroundColor: cream_background,
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -43,21 +35,22 @@ class _ActivityTwoCompleteState extends State<ActivityTwoComplete> {
                     height: 80,
                   ),
                 ),
+                const SizedBox(height: 50,),
                 Text(
-                  "Moving Car",
+                  "Thank you!",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: textBlue,
                   ),
                 ),
                 Image.asset(
-                  "assets/images/car_brown.png",
+                  "assets/images/final.png",
                   width: 250,
                   height: 250,
                 ),
                 Text(
-                  "Activity 2",
+                  "Result:",
                   style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
@@ -66,26 +59,20 @@ class _ActivityTwoCompleteState extends State<ActivityTwoComplete> {
                 ),
                 SizedBox(
                   height: 20,
-                ),
-                CircleTextWidget(
-                  text: (10 - gl_mark_2.round()).toString(),
-                  circleColor: backgroundBlue,
-                  textColor: backgroundYellow,
-                  circleRadius: 40.0,
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
-                  "Completed.",
+                  "High probability of having CVi..",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: textBlue,
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 Consumer<ResponseProvider>(
                   builder: ((context, responseProviderModel, child) =>
@@ -99,8 +86,10 @@ class _ActivityTwoCompleteState extends State<ActivityTwoComplete> {
                             ),
                           );
                         },
-                        titel: 'Quiz',
-                        textColor: textBlue,
+                        titel: 'More information',
+                        textColor: textWhite,
+                        fontSize: 20,
+                        buttonColor: backgroundBlue,
                       )),
                 ),
               ],

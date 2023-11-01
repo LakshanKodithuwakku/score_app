@@ -32,10 +32,13 @@ class _ObjectNotMoveScreenState extends State<ObjectNotMoveScreen> {
     Timer(Duration(seconds: 21), () async {
       stopSpeaking();
       if (isNotClicked == true) {
-        _userService.createUser(
-            name: gl_name, age: gl_age ?? 0, gender: gl_gender ?? "");
-        await Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const ActivityTwoComplete()));
+        /*_userService.createUser(
+          //  name: gl_name, age: gl_age ?? 0, gender: gl_gender ?? ""
+        );*/
+        await Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const ActivityTwoComplete()));
       }
     });
   }
@@ -76,8 +79,9 @@ class _ObjectNotMoveScreenState extends State<ObjectNotMoveScreen> {
                 gl_mark_2 = (clicked_time_ac2! / 21) * 10;
                 print('Time duration: ${clicked_time_ac2}s');
 
-                _userService.createUser(
-                    name: gl_name, age: gl_age ?? 0, gender: gl_gender ?? "");
+                /*_userService.createUser(
+                  //  name: gl_name, age: gl_age ?? 0, gender: gl_gender ?? ""
+                );*/
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

@@ -18,12 +18,7 @@ class UserDataFormScreen extends StatefulWidget {
 late final String gl_name;
 late final int? gl_age;
 late final String gl_gender;
-double gl_mark_1 = 10;
-double gl_mark_2 = 10;
-late final String api;
-int clicked_time_ac1 = 21;
-int clicked_time_ac2 = 21;
-String doc_id="";
+
 
 class _UserDataFormScreenState extends State<UserDataFormScreen> {
   final _nameController = TextEditingController();

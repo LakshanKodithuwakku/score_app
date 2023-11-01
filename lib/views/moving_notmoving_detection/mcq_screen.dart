@@ -137,7 +137,7 @@ class _MCQScreenState extends State<MCQScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(" Question " + (index + 4).toString(),
+                        Text(" Question " + (index + 1).toString(),
                             style: TextStyle(
                                 color: generalInfo_text, fontSize: 16)),
                         Card(
@@ -190,10 +190,11 @@ class _MCQScreenState extends State<MCQScreen> {
             height: 10,
           ),
           CustomButton(
-              onPressed: () {
+              onPressed: () async {
+                await getScore();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (_) => const StartScreen(),
+                    builder: (_) => const QuizScoreScreen(),
                   ),
                 );
               },
@@ -204,4 +205,12 @@ class _MCQScreenState extends State<MCQScreen> {
       ),
     );
   }
+
+  getScore(){
+    for(int i=0; i<selectedAnswers.length; i++){
+      quiz_mark = quiz_mark + selectedAnswers[i]!.toInt()+1;
+    }
+  }
 }
+
+

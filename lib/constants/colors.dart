@@ -12,5 +12,6 @@ const Color border_mcq = Color(0xFFFFF8DB);
 const Color question = Color(0xFFB08D00);
 const Color question_border = Color(0xFFF9D02E);
 const Color generalInfo_text = Color(0xFF504000);
+const Color cream_background = Color(0xFFFFF4C8);
 
 

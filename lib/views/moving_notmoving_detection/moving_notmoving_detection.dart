@@ -8,3 +8,5 @@ export 'second_activiy_start_screen.dart';
 export 'second_activity_complete_screen.dart';
 export 'object_not_move_screen.dart';
 export 'score_screen.dart';
+export 'quiz_score_screen.dart';
+export 'final_result_screen.dart';

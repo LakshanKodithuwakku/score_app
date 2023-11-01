@@ -126,7 +126,7 @@ class _EndScreenState extends State<EndScreen> {
                       _sendDataToFirestore(TotalMarks);
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => UserDataFormScreen()), //Activity0(userId: userId)), //navigate to next activity
+                        MaterialPageRoute(builder: (context) => StartScreen()), //Activity0(userId: userId)), //navigate to next activity
                       );
                     } ,
                     style: ElevatedButton.styleFrom(
