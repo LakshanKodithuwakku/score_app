@@ -47,11 +47,11 @@ class ResponseProvider extends ChangeNotifier{
 
   void db_updade(){
     final docUser = FirebaseFirestore.instance
-        .collection('users')
+        .collection('object_move')
         .doc(doc_id);
     /// Update specification fields
     docUser.update({
-      'Having  probability of "Need for movement" CVI characteristic?':diagnose
+      'High probability of having CVi':diagnose
     });
   }
 }

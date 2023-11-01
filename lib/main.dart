@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:score_app/controllers/color_preferance/CP_Activity_Score.dart';
 import 'package:score_app/controllers/color_preferance/CP_Time_Score.dart';
+import 'package:score_app/views/views.dart';
 import 'package:score_app/views/visual_complexity/activity0.dart';
 import 'package:score_app/views/visual_field_prefarance/start_screen.dart';
 import 'controllers/color_preferance/CP_Quiz_Score.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: StartScreen(),
+        home: StartScreenMoveOBJ(), //StartScreen(),
       ),
     );
   }

@@ -15,7 +15,6 @@ class ActivityTwoComplete extends StatefulWidget {
 }
 
 class _ActivityTwoCompleteState extends State<ActivityTwoComplete> {
-
   @override
   void initState() {
     // TODO: implement initState
@@ -87,21 +86,17 @@ class _ActivityTwoCompleteState extends State<ActivityTwoComplete> {
                 SizedBox(
                   height: 20,
                 ),
-                Consumer<ResponseProvider>(
-                  builder: ((context, responseProviderModel, child) =>
-                      CustomButton(
-                        onPressed: () {
-                          stopSpeaking();
-                          responseProviderModel.postData();
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (_) => MCQScreen(),//scoreShow(),
-                            ),
-                          );
-                        },
-                        titel: 'Quiz',
-                        textColor: textBlue,
-                      )),
+                CustomButton(
+                  onPressed: () {
+                    stopSpeaking();
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (_) => MCQScreen(), //scoreShow(),
+                      ),
+                    );
+                  },
+                  titel: 'Quiz',
+                  textColor: textBlue,
                 ),
               ],
             ),
@@ -111,4 +106,3 @@ class _ActivityTwoCompleteState extends State<ActivityTwoComplete> {
     );
   }
 }
-

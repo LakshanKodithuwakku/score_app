@@ -14,14 +14,14 @@ int clicked_time_ac1 = 21;
 int clicked_time_ac2 = 21;
 String doc_id="";
 
-class StartScreen extends StatefulWidget {
-  const StartScreen({Key? key}) : super(key: key);
+class StartScreenMoveOBJ extends StatefulWidget {
+  const StartScreenMoveOBJ({Key? key}) : super(key: key);
 
   @override
-  State<StartScreen> createState() => _StartScreenState();
+  State<StartScreenMoveOBJ> createState() => _StartScreenMoveOBJState();
 }
 
-class _StartScreenState extends State<StartScreen> {
+class _StartScreenMoveOBJState extends State<StartScreenMoveOBJ> {
   final _apiController = TextEditingController();
 
   @override

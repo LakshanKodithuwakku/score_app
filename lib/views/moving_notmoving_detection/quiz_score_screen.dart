@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../constants/constants.dart';
 import '../../functions/functions.dart';
+import '../../provider/provider.dart';
 import '../../services/services.dart';
 import '../../widgets/widgets.dart';
 import '../views.dart';
@@ -66,14 +68,22 @@ class _QuizScoreScreenState extends State<QuizScoreScreen> {
                   color: textWhite,
                 ),),
                 const SizedBox(height: 50,),
-                CustomButton(onPressed: () {
-                  stopSpeaking();
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (_) => const FinalResultScreen(),
-                    ),
-                  );
-                }, titel: 'Next', textColor: textBlue,),
+                Consumer<ResponseProvider>(
+                  builder: ((context, responseProviderModel, child) =>
+                      CustomButton(
+                        onPressed: () {
+                          stopSpeaking();
+                          responseProviderModel.postData();
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (_) => const FinalResultScreen(),//scoreShow(),
+                            ),
+                          );
+                        },
+                        titel: 'Next',
+                        textColor: textBlue,
+                      )),
+                ),
               ],
             ),
           ),

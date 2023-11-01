@@ -72,26 +72,35 @@ class _FinalResultScreenState extends State<FinalResultScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 Consumer<ResponseProvider>(
                   builder: ((context, responseProviderModel, child) =>
+                      CircleTextWidget(
+                        text: responseProviderModel.diagnose,
+                        circleColor: backgroundBlue,
+                        textColor: textWhite,
+                        circleRadius: 50.0,
+                      )),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                       CustomButton(
                         onPressed: () {
                           stopSpeaking();
-                          responseProviderModel.postData();
-                          Navigator.of(context).pushReplacement(
+                          /*Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                               builder: (_) => MCQScreen(),//scoreShow(),
                             ),
-                          );
+                          );*/
                         },
                         titel: 'More information',
                         textColor: textWhite,
                         fontSize: 20,
                         buttonColor: backgroundBlue,
-                      )),
-                ),
+                      ),
+
               ],
             ),
           ),
